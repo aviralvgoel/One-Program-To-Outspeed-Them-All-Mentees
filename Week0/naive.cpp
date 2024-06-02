@@ -13,9 +13,13 @@ vec schurProduct(vec v1, vec v2) {
         cout<<"dot product not possible";
         exit(-1);
     }
-
+    vec result(v1.size);
     // implemented by you, naive schur product
     // start of user code
+    for (size_t i = 0; i < v1.size; ++i) {
+        result.arr[i]= v1.arr[i] * v2.arr[i]; 
+    }
+    return result; 
     // end of user code
 }
 
@@ -42,7 +46,7 @@ int main() {
         schurProduct(v1,v2);
     }
     auto end = chrono::high_resolution_clock::now();
-    auto elapsed = chrono::duration_cast<std::chrono::duration<double>>(end - start);
+    auto elapsed = chrono::duration_cast<std::chrono::duration<double> >(end - start);
     cout<<logger<<" "<<elapsed.count()<<endl;
     v1.free();
     v2.free();

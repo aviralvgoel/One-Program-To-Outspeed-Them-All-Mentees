@@ -46,7 +46,7 @@ int main() {
         schurProduct(v1,v2);
     }
     auto end = chrono::high_resolution_clock::now();
-    auto elapsed = chrono::duration_cast<std::chrono::duration<double>>(end - start);
+    auto elapsed = chrono::duration_cast<std::chrono::duration<double> >(end - start);
     cout<<logger<<" "<<elapsed.count()<<endl;
     v1.free();
     v2.free();
